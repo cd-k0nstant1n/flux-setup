@@ -1,0 +1,15 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: podinfo
+  namespace: flux-system  # Specifing the namespace where Flux is installed
+spec:
+  releaseName: podinfo
+  chart:
+    repository: https://charts.bitnami.com/bitnami  #  repository URL 
+    name: podinfo
+    version: 6.6.3  
+  values:
+    image:
+      repository: localhost:8000/podinfo  # Docker repository and image name
+      tag: semver:~6.6  # Specify the image tag to track, using a semantic versioning constraint
