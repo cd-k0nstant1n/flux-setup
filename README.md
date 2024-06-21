@@ -17,8 +17,8 @@ Needed software before beginning:
 
 1. **Clone Repository**:
    ```sh
-   git clone <repository-url>
-   cd <repository-directory>
+   git clone https://github.com/cd-k0nstant1n/flux-setup.git
+   cd flux-setup/terraform
 
 2. **Apply Terraform Configuration**:
    ```sh
@@ -28,6 +28,7 @@ Needed software before beginning:
 3. **Change(if needed) and apply HelmRelease**:
 
    ```sh
+   cd ../clusters/minicube
    kubectl apply -f podinfo-helmrelease.yaml
 
 4. **Install Helm Operator (if using)**:
