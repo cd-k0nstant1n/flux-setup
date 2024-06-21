@@ -19,3 +19,24 @@ Needed software before beginning:
    ```sh
    git clone <repository-url>
    cd <repository-directory>
+
+2. **Apply Terraform Configuration**:
+   ```sh
+   terraform init
+   terraform apply
+
+3. **Change(if needed) and apply HelmRelease**:
+
+   ```sh
+   kubectl apply -f podinfo-helmrelease.yaml
+
+4. **Install Helm Operator (if using)**:
+
+   ```sh
+   helm repo add fluxcd https://charts.fluxcd.io
+   helm upgrade -i helm-operator fluxcd/helm-operator --namespace flux-system --set helm.versions=v3
+
+### Explanation
+
+- **Prerequisites**: Lists the tools and configurations needed before starting the setup.
+- **Setup Instructions**: Step-by-step guide to setting up Flux with Terraform, deploying `podinfo` using Helm via Flux, and configuring auto-updates for image tags.
